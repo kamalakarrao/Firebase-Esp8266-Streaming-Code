@@ -55,7 +55,7 @@ void setup()
   //5. Try to set int data to Firebase
   //The set function returns bool for the status of operation
   //fbdo requires for sending the data
-  if(Firebase.setInt(fbdo, "/LED_Status", 1))
+  if(Firebase.setInt(fbdo, "/LED_Status_set", 1))
   {
     //Success
      Serial.println("Set int data success");
@@ -71,7 +71,7 @@ void setup()
   //6. Try to get int data from Firebase
   //The get function returns bool for the status of operation
   //fbdo requires for receiving the data
-  if(Firebase.getInt(fbdo, "/LED_Status"))
+  if(Firebase.getInt(fbdo, "/LED_Status_get"))
   {
     //Success
     Serial.print("Get int data success, int = ");
@@ -83,45 +83,6 @@ void setup()
     Serial.print("Error in getInt, ");
     Serial.println(fbdo.errorReason());
   }
-
-  /*
-  In case where you want to set other data types i.e. bool, float, double and String, you can use setBool, setFloat, setDouble and setString.
-  If you want to get data which you known its type at specific node, use getInt, getBool, getFloat, getDouble, getString.
-  If you don't know the data type at specific node, use get and check its type.
-  The following shows how to get the variant data
-  */
-
- if(Firebase.get(fbdo, "/LED_Status"))
-  {
-    //Success
-    Serial.print("Get variant data success, type = ");
-    Serial.println(fbdo.dataType());
-
-    if(fbdo.dataType() == "int"){
-      Serial.print("data = ");
-      Serial.println(fbdo.intData());
-    }else if(fbdo.dataType() == "bool"){
-      if(fbdo.boolData())
-        Serial.println("data = true");
-      else
-        Serial.println("data = false");
-    }
-
-  }else{
-    //Failed?, get the error reason from fbdo
-
-    Serial.print("Error in get, ");
-    Serial.println(fbdo.errorReason());
-  }
-
-  /*
-  If you want to get the data in realtime instead of using get, see the stream examples.
-  If you want to work with JSON, see the FirebaseJson, jsonObject and jsonArray examples.
-  If you have questions or found the bugs, feel free to open the issue here https://github.com/mobizt/Firebase-ESP8266
-  */
-
-
-
 
 }
 
