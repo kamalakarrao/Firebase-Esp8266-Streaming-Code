@@ -22,7 +22,7 @@
 #define WIFI_PASSWORD "YOUR WIFI PASSWORD"
 
 // Linking to your Firebase Project 
-//Eg: PROJECT_ID.firebaseio.com
+//Eg: PROJECT_ID.firebaseio.com [Please Don't include 'https' or '/']
 #define FIREBASE_HOST "YOUR FIREBASE DATABASE URL"
 #define FIREBASE_AUTH "YOUR FIREBASE DATABASE SECRET KEY"
 
