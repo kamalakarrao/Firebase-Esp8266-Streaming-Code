@@ -11,6 +11,25 @@ The Basic Firebase Streaming Code to help you connect to your Firebase database 
 
 # Programming the Nodemcu | ESP8266
 
+
+# Firebase Basic Code to Read and Store Data
+
+Step-1: Copy the Code from Firebase-Basic-Stream.ino and paste it in your Arduino IDE
+
+Step-2: Enter your Wifi SSID & PASSWORD in the code 
+
+Step-3: Enter your FIRBASE HOST & FIREBASE_AUTH in the code
+        
+        FIREBASE HOST is the Firebase Database Url in your Firebase Project
+                Eg: workshop-test-default-rtdb.firebaseio.com 
+                Make sure you don't include "https" or "/"
+        
+        FIREBASE_AUTH is the Database Secret Key which can be found under firebase project settings
+        
+Step-4: Upload your Code to your Board
+
+# Firebase Streaming
+
 Step-1: Copy the Code from Firebase-Basic-Stream.ino and paste it in your Arduino IDE
 
 Step-2: Enter your Wifi SSID & PASSWORD in the code 
