@@ -18,11 +18,14 @@
 #include <FirebaseESP8266.h>
 
 //---------------------1. YOU Need to Change the following info--------------------------------
-#define WIFI_SSID "WIFI_AP"
-#define WIFI_PASSWORD "WIFI_PASSWORD"
-#define FIREBASE_HOST "PROJECT_ID.firebaseio.com"
-#define FIREBASE_AUTH "DATABASE_SECRET"
+// SSID & PASSWORD for Connecting to Wi-Fi
+#define WIFI_SSID "YOUR WIFI SSID"
+#define WIFI_PASSWORD "YOUR WIFI PASSWORD"
 
+// Linking to your Firebase Project 
+//Eg: PROJECT_ID.firebaseio.com
+#define FIREBASE_HOST "YOUR FIREBASE DATABASE URL"
+#define FIREBASE_AUTH "YOUR FIREBASE DATABASE SECRET KEY"
 //----------------------------------------------------------------------------------------------
 
 
