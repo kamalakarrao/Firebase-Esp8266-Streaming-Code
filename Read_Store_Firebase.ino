@@ -80,7 +80,7 @@ void setup()
    
   //The set function returns bool for the status of operation
   //fbdo requires for sending the data
-  if(Firebase.setInt(fbdo, "/LED_Status_set", 1))
+  if(Firebase.setInt(fbdo, "/LED_Status", 1))
   {
     //Success
      Serial.println("Set int data success");
@@ -99,7 +99,7 @@ void setup()
 
   //The get function returns bool for the status of operation
   //fbdo requires for receiving the data
-  if(Firebase.getInt(fbdo, "/LED_Status_get"))
+  if(Firebase.getInt(fbdo, "/LED_Status"))
   {
     //Success
     Serial.print("Get int data success, int = ");
