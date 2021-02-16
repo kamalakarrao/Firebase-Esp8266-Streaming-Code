@@ -15,11 +15,11 @@
 #include <ESP8266WiFi.h>
 #include <FirebaseESP8266.h>
 
-#define WIFI_SSID "Venago"
-#define WIFI_PASSWORD "one234567"
+#define WIFI_SSID "YOUR WIFI SSID"
+#define WIFI_PASSWORD "YOUR WIFI PASSWORD"
 
-#define FIREBASE_HOST ""
-#define FIREBASE_AUTH ""
+#define FIREBASE_HOST "YOUR FIREBASE DATABASE URL"
+#define FIREBASE_AUTH "YOUR FIREBASE DATABASE SECRET KEY"
 
 
 String DEVICE_ID = "device1";
@@ -69,11 +69,11 @@ void setup()
   fbdo2.setResponseSize(1024);
 
 
-if (Firebase.pathExist(fbdo1, DEVICE_STREAM_PATH)){
+  if (Firebase.pathExist(fbdo1, DEVICE_STREAM_PATH)) {
 
-Firebase.setString(fbdo1, DEVICE_STREAM_PATH+"/switch1","off");
-  
-}
+    Firebase.setString(fbdo1, DEVICE_STREAM_PATH + "/switch1", "off");
+
+  }
 
 
   Serial.println("Begin stream 1...");
@@ -131,3 +131,4 @@ void loop()
 
 
 }
+
