@@ -14,7 +14,7 @@ The Basic Firebase Streaming Code to help you connect to your Firebase database 
 
 # Firebase Basic Code to Read and Store Data
 
-Step-1: Copy the Code from Firebase-Basic-Stream.ino and paste it in your Arduino IDE
+Step-1: Copy the Code from Read_Store_Firebase.ino and paste it in your Arduino IDE
 
 Step-2: Enter your Wifi SSID & PASSWORD in the code 
 
