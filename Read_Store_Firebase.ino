@@ -17,20 +17,32 @@
 #include <ESP8266WiFi.h>
 #include <FirebaseESP8266.h>
 
-//1. Change the following info
+//---------------------1. YOU Need to Change the following info--------------------------------
 #define WIFI_SSID "WIFI_AP"
 #define WIFI_PASSWORD "WIFI_PASSWORD"
 #define FIREBASE_HOST "PROJECT_ID.firebaseio.com"
 #define FIREBASE_AUTH "DATABASE_SECRET"
 
-//2. Define FirebaseESP8266 data object for data sending and receiving
+//----------------------------------------------------------------------------------------------
+
+
+//---------------------2. Define FirebaseESP8266 data object for data sending and receiving-------------------------
+
 FirebaseData fbdo;
+
+//----------------------------------------------------------------------------------------------
 
 
 void setup()
 {
-
+   
+//-------------------3.This Line is used to Enable to Display the process on Serial Monitor ---------------------------------------------------------------------------
+//Serial.println("Test"); is used to print 'Test' on Serial Monitor
   Serial.begin(115200);
+   
+//----------------------------------------------------------------------------------------------
+
+//-------------------4.This Block of Code connect Nodemcu to Wi-Fi---------------------------------------------------------------------------
 
   WiFi.begin(WIFI_SSID, WIFI_PASSWORD);
   Serial.print("Connecting to Wi-Fi");
@@ -44,15 +56,25 @@ void setup()
   Serial.println(WiFi.localIP());
   Serial.println();
 
+//----------------------------------------------------------------------------------------------
 
-  //3. Set your Firebase info
+
+//-------------------5.This Initializes Firebase Functionality---------------------------------------------------------------------------
 
   Firebase.begin(FIREBASE_HOST, FIREBASE_AUTH);
+   
+//----------------------------------------------------------------------------------------------
 
-  //4. Enable auto reconnect the WiFi when connection lost
+
+//-------------------6. Enable auto reconnect the WiFi when connection lost---------------------------------------------------------------------------
+   
   Firebase.reconnectWiFi(true);
 
-  //5. Try to set int data to Firebase
+//----------------------------------------------------------------------------------------------
+
+
+  //------------------- 7. Try to set int data to Firebase------------------------
+   
   //The set function returns bool for the status of operation
   //fbdo requires for sending the data
   if(Firebase.setInt(fbdo, "/LED_Status_set", 1))
@@ -67,8 +89,11 @@ void setup()
     Serial.println(fbdo.errorReason());
   }
 
+ //----------------------------------------------------------------------------------------------
 
-  //6. Try to get int data from Firebase
+
+  //------------------- 8. Try to get int data from Firebase------------------------
+
   //The get function returns bool for the status of operation
   //fbdo requires for receiving the data
   if(Firebase.getInt(fbdo, "/LED_Status_get"))
@@ -83,9 +108,13 @@ void setup()
     Serial.print("Error in getInt, ");
     Serial.println(fbdo.errorReason());
   }
+   
+//----------------------------------------------------------------------------------------------
+
 
 }
 
 void loop()
 {
+   //As of now , We're not running anything in loop.
 }
