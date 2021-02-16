@@ -18,6 +18,8 @@ Step-2: Enter your Wifi SSID & PASSWORD in the code
 Step-3: Enter your FIRBASE HOST & FIREBASE_AUTH in the code
         
         FIREBASE HOST is the Firebase Database Url in your Firebase Project
+                Eg: workshop-test-default-rtdb.firebaseio.com 
+                Make sure you don't include "https" or "/"
         
         FIREBASE_AUTH is the Database Secret Key which can be found under firebase project settings
         
